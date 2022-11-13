@@ -1,0 +1,40 @@
+<cloud-title>Design your product masterpiece</cloud-title>
+
+<p>We provide a palette of fresh tags...you provide the inspiration! Select the
+  components that will come together as your crowning achievement of product workmanship.</p>
+
+<form (ngSubmit)="onSubmit()">
+  <div class="tagsblock" style="text-align: center; width: 100%;">
+    <group-box title="Record your high">
+      <span *ngFor="let high of highs">
+        <input type="checkbox" (change)="updateTags(high, $event)" name="tags" value="{{high.id}}"/>{{high.name}}<br/>
+      </span>
+    </group-box>
+    <group-box title="Pick your mids">
+      <span *ngFor="let mid of mids">
+        <input type="checkbox" (change)="updateTags(mid, $event)" name="tags" value="{{mid.id}}"/>{{mid.name}}<br/>
+      </span>
+    </group-box>
+    <group-box title="Choose your lows">
+      <span *ngFor="let low of lows">
+        <input type="checkbox" (change)="updateTags(low, $event)" name="tags" value="{{low.id}}"/>{{low.name}}<br/>
+      </span>
+    </group-box>
+    <group-box title="Name your product creation">
+      My product magnum opus shall be called<br/>
+      the "<input type="text" [(ngModel)]="product.description" name="description" class="Field"/>"!
+    </group-box>
+    <group-box title="Set your product imageUrl">
+      My product imageUrl<br/>
+      is "<input type="text" [(ngModel)]="product.imageUrl" name="imageUrl" class="Field"/>"!
+    </group-box>
+    <group-box title="Set your product price">
+      My product price<br/>
+      is "<input type="text" [(ngModel)]="product.price" name="price" class="Field"/>"!
+    </group-box>
+  </div>
+
+  <div style="text-align:center; width:100%;">
+    <big-button label="Construct this product"></big-button>
+  </div>
+</form>

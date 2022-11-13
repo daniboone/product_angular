@@ -1,0 +1,22 @@
+<cloud-title>Admire some recently created product masterpieces</cloud-title>
+
+<p>Even the greatest artists sometimes need to be inspired by the works of others.
+  Here are some of the most recently created products, designed by product artists just like you...</p>
+
+<div class="recentsblock">
+  <div class="productblock" *ngFor="let product of recentProducts">
+      <div class="productName"><span class="small">The</span><br/>"{{product.description}}"</div>
+      <div class="productDesc">
+        <ul class="commalist">
+          <li *ngFor="let tag of product.tags | nonhigh">{{tag.name}}</li>
+        </ul>
+        <div *ngIf="(product.tags | high)?.length > 0">
+        <span>wrapped in</span><ul class="commalist">
+            <li *ngFor="let tag of product.tags | high">{{tag.name}}</li>
+        </ul>
+        </div>
+        <div *ngIf="(product.tags | high)?.length == 0">in a bowl</div>
+      </div>
+      <little-button label="Order this product"></little-button>
+  </div>
+</div>

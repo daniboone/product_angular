@@ -25,3 +25,9 @@ Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To u
 ## Further help
 
 To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+
+## Short Description
+
+A Personal Project inspired by Spring in Action 5th chapter 6.
+
+At this point the project is simple, create a product and add to cart set the desired quantity and see the total in the cart its not fully implemented yet.
